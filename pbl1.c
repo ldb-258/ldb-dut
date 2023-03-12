@@ -76,7 +76,7 @@ void run(){
 				break;
 		default: printf("Vui long nhap lua chon 1 hoac 2 !");		
 	}
-
+	fclose(output);
 			
 	
 	
