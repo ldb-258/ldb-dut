@@ -7,6 +7,8 @@ void opint(float a){
 		else printf("%.2f",a);
 }
 void run(){
+	FILE *input = fopen("E:\\DevC++\\PBL1\\input.txt", "r");
+	
 	unsigned int n;
 	int i,k;
 	float c;
@@ -14,15 +16,15 @@ void run(){
 	float b[100];
 
 //Input:
-	printf("Nhap bac cua da thuc : ");
-	scanf("%u",&n);
+	//	Nhap bac cua da thuc :
+	fscanf(input, "%u",&n);
 	for(i=n;i>=0;i--){
-		printf("Nhap he so x^%d : ",i);
-		scanf("%f",&b[n-i]);
+	//	Nhap he so x^%d :
+		fscanf(input, "%f",&b[n-i]);
 	}
-	printf("y - ");
-	scanf("%f",&c);
-	
+	//	y - " "
+	fscanf(input,"%f",&c);
+	fclose(input);
 //Solve:
 	for(i=0;i<=n;i++) a[i][0]=b[0];
 	for(i=1;i<=n;i++) a[0][i]=b[i];
@@ -45,4 +47,5 @@ void run(){
 }
 int main(){
 	run();
+	return 0;
 }
